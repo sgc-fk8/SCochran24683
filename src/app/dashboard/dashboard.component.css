@@ -43,11 +43,11 @@ a {
 }
 
 @media (min-width: 600px) {
-  a {
-    width: 18%;
-    box-sizing: content-box;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
   }
-}
+
 
 a:hover {
   background-color: black;
