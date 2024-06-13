@@ -14,7 +14,7 @@ import { LineOfBusinessDetailComponent } from './lineOfBusiness-detail/lineOfBus
 import { LineOfBusinessComponent } from './linesOfBusiness/linesOfBusiness.component';
 import { LineOfBusinessSearchComponent } from './lineOfBusiness-search/lineOfBusiness-search.component';
 import { MessagesComponent } from './messages/messages.component';
-import { PopularLineWithCountComponent } from './popular-line-with-count/popular-line-with-count.component';
+import { PopularAndCountComponent } from './popular-and-count/popular-and-count.component';
 
 @NgModule({
   imports: [
@@ -37,7 +37,7 @@ import { PopularLineWithCountComponent } from './popular-line-with-count/popular
     LineOfBusinessComponent,
     LineOfBusinessSearchComponent,
     MessagesComponent,
-    PopularLineWithCountComponent
+    PopularAndCountComponent
   ],
   bootstrap: [ AppComponent ]
 })
