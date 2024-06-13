@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PopularAndCountComponent } from './popular-line-with-count.component';
+import { PopularAndCountComponent } from './popular-and-count.component';
 
 describe('PopularAndCountComponent', () => {
   let component: PopularAndCountComponent;
