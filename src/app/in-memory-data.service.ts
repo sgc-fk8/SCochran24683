@@ -27,9 +27,32 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 108, quoteNumber: 'AC127PC', lineOfBusiness: 15 }
     ];
 
-    return {linesOfBusiness};
+    return {linesOfBusiness, recentQuotes};
   }
 
+ getLineOfBusinessCount(): { name: string, count: number }[] {
+    const recentQuotes = this.createDb().recentQuotes;
+    const linesOfBusiness = this.createDb().linesOfBusiness;
+
+    const countMap = new Map<number, number>();
+
+    // Counts occurances
+    recentQuotes.forEach(quote => {
+      if (countMap.has(quote.lineOfBusiness)) {
+        countMap.set(quote.lineOfBusiness, countMap.get(quote.lineOfBusiness)! + 1);
+      } else {
+        countMap.set(quote.lineOfBusiness, 1);
+      }
+    });
+
+    // Results
+    const result = linesOfBusiness.map(line => ({
+      name: line.name,
+      count: countMap.get(line.id) || 0 // default to 0 if not found
+    }));
+    result.sort((a, b) => b.count - a.count);
+    return result;
+  }
   // Overrides the genId method to ensure that a line of business always has an id.
   // If the lines of business array is empty,
   // the method below returns the initial number (11).
