@@ -48,7 +48,7 @@ export class InMemoryDataService implements InMemoryDbService {
     // Results
     const result = linesOfBusiness.map(line => ({
       name: line.name,
-      count: countMap.get(line.id) || 0 // default to 0 if not found
+      count: countMap.get(line.id) || 0 // defaults to 0 
     }));
     result.sort((a, b) => b.count - a.count);
     return result;
